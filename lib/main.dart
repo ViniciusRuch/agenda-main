@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:agenda/principal.dart';
+import 'package:agenda/views/principal.dart';
 
 void main() {
   runApp(const MainApp());
