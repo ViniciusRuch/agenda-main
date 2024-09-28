@@ -46,14 +46,14 @@ class _FormExampleState extends State<FormExample> {
           TextField(controller: ctlEmail,
           decoration: InputDecoration(labelText: 'Email',hintText: 'xxx@xxx.com'),),
           TextField(controller: ctlNumCel, 
-          decoration: InputDecoration(labelText: 'Numero de Celuar',hintText: '(xx)xxxx-xxxx'),),
+          decoration: InputDecoration(labelText: 'Numero de Celuar',hintText: '(xx) xxxxx-xxxx'),),
           TextButton(onPressed: (){if(validacao(ctlNome, ctlEmail, ctlNumCel)){
             setState(() {
               Contato contato = Contato(nome: ctlNome.text, email: ctlEmail.text, numCel: ctlNumCel.text);
               rptUser.adduser(contato);
                
             });
-          //Navigator.pop(context);
+          Navigator.pop(context);
           }
             
           }, child: Text('Salvar'))
@@ -75,7 +75,7 @@ class _FormExampleState extends State<FormExample> {
               TextButton(
                 child: Text("OK"),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  
                 },
               )
             ]);
@@ -92,14 +92,14 @@ class _FormExampleState extends State<FormExample> {
               TextButton(
                 child: Text("OK"),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  
                 },
               )
             ]);
     });
   }
   
-  if(!phoneRegExp.hasMatch(ctNumCel.text)){
+  if(!phoneRegExp.hasMatch(ctNumCel.text) && ctNumCel.text.isEmpty){
         showDialog(
       context: context,
       builder: (BuildContext context) {
@@ -110,7 +110,7 @@ class _FormExampleState extends State<FormExample> {
               TextButton(
                 child: Text("OK"),
                 onPressed: () {
-                  Navigator.of(context).pop();
+                  
                 },
               )
             ]);
