@@ -1,9 +1,9 @@
-class Ussuario {
+class Contato {
   String nome;
    String email;
    String numCel;
 
-  Ussuario({
+  Contato({
     required this.nome,
     required this.email,
     required this.numCel
